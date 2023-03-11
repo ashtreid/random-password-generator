@@ -33,6 +33,32 @@ function generatePassword() {
     window.alert("You need to choose at least one character type. Please try again.");
     return "";
   };
+
+    // Handles all the prompts responses by comparing to the 'yes' const and then applying the appropriate variable as a string.
+  // It also handles the case when the user clicks "cancel" - it will end the prompts. 
+  if (askLowCase == yes) {
+    userChoice += abcLow; 
+  } else if (!askLowCase) {
+    return;
+  };
+
+  if (askUpCase == yes) {
+    userChoice += abcUp;
+  } else if (!askUpCase) {
+    return;
+  };
+
+  if (askNumeric == yes) {
+    userChoice += numbers;
+  } else if (!askNumeric) {
+    return;
+  };
+
+  if (askSpecialChars == yes) {
+    userChoice += specialChars;
+  } else if (!askSpecialChars) {
+    return;
+  };
 };
 
 // Write password to the #password input
