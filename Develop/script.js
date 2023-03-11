@@ -18,6 +18,11 @@ function generatePassword() {
     return;
   }
 
+  // Series of prompts that are then converted to uppercase letters
+  var askLowCase = window.prompt("Would you like to include lowercase letters? Y/N").toUpperCase();
+  var askUpCase = window.prompt("Would you like to include uppercase letters? Y/N").toUpperCase();
+  var askNumeric = window.prompt("Would you like to include numbers? Y/N").toUpperCase();
+  var askSpecialChars = window.prompt("Would you like to include special characters? Y/N").toUpperCase();
 };
 
 // Write password to the #password input
