@@ -59,7 +59,16 @@ function generatePassword() {
   } else if (!askSpecialChars) {
     return;
   };
-};
+
+  // Uses a for loop to determine the length chosen by the user and then grabs random items out of the userChoice which is using the consts at the top of the page.
+  // Then it returns the randomized password as a string.
+  for (var i = 0; i < askPassLength; i++) {
+    var randomCharIndex = Math.floor(Math.random() * userChoice.length);
+    password += userChoice.charAt(randomCharIndex);
+  }
+
+  return password;
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -67,7 +76,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
