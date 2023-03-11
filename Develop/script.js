@@ -23,6 +23,16 @@ function generatePassword() {
   var askUpCase = window.prompt("Would you like to include uppercase letters? Y/N").toUpperCase();
   var askNumeric = window.prompt("Would you like to include numbers? Y/N").toUpperCase();
   var askSpecialChars = window.prompt("Would you like to include special characters? Y/N").toUpperCase();
+
+  // Variables to represent the correct answer format for comparing
+  const yes = "Y";
+  const no = "N";
+
+  // Handles when the user answers "N" (no) to all prompts - it will tell then that they need to include at least one.
+  if (askLowCase == no && askUpCase == no && askNumeric == no && askSpecialChars == no) {
+    window.alert("You need to choose at least one character type. Please try again.");
+    return "";
+  };
 };
 
 // Write password to the #password input
