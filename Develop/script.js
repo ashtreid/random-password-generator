@@ -1,4 +1,3 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 const abcUp = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const abcLow = 'abcdefghijklmnopqrstuvwxyz';
@@ -10,11 +9,13 @@ function generatePassword() {
   var askPassLength = window.prompt("How long would you like your password? Choose a number between 8 - 128.")
 
   // Checks to see if the input is between 8 and 128. If not, it raises an alert on the window without returning the invalid input.
-  // Also, if the user clicks, cancel, it will end the prompt. I learned this from the recent student mini project solutions.
   if (askPassLength < 8 || askPassLength > 128) {
     alert("Invalid input.");
     return "";
-  } else if (!askPassLength) {
+  }
+  
+  // If the user clicks, cancel, it will end the prompt. I learned this from the recent student mini project solutions.
+  if (!askPassLength) {
     return;
   }
 
@@ -34,7 +35,11 @@ function generatePassword() {
     return "";
   };
 
-    // Handles all the prompts responses by comparing to the 'yes' const and then applying the appropriate variable as a string.
+  // I've learned this is a good way to handle turning data to strings and to represent what it is you are expecting.
+  var userChoice = "";
+  var password = "";
+
+  // Handles all the prompts responses by comparing to the 'yes' const and then applying the appropriate variable as a string.
   // It also handles the case when the user clicks "cancel" - it will end the prompts. 
   if (askLowCase == yes) {
     userChoice += abcLow; 
@@ -78,5 +83,5 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+// Adds event listener when the button in the UI is clicked.
 generateBtn.addEventListener("click", writePassword);
